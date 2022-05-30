@@ -6,20 +6,9 @@ const ExpenseForm = () => {
     const [enteredAmount, setEnteredAmount] = useState('');
     const [enteredDate, setEnteredDate] = useState('');
 
-    const titleChangeHandler = event => {
-        const titleValue = event.target.value;
-        setEnteredTitle = titleValue;
-    }
-
-    const amountChangeHandler = event => {
-        const amountValue = event.target.value;
-        setEnteredAmount = amountValue;
-    }
-
-    const dateChangeHandler = event => {
-        const dateValue = event.target.value;
-        setEnteredDate = dateValue;
-    }
+    const titleChangeHandler = event => setEnteredTitle(event.target.value);
+    const amountChangeHandler = event => setEnteredAmount(event.target.value);
+    const dateChangeHandler = event => setEnteredDate(event.target.value);
 
     return (
         <form>
