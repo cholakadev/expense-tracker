@@ -11,12 +11,17 @@ const ExpenseForm = () => {
     const dateChangeHandler = event => setEnteredDate(event.target.value);
 
     const submitHandler = (event) => {
-        event.preventDefault();
+        event.preventDefault(); // Used to prevent page reaload when the form is submited
+
         const expenseData = {
             title: enteredTitle,
             amount: enteredAmount,
             date: new Date(enteredDate)
         }
+
+        setEnteredTitle('');
+        setEnteredAmount('');
+        setEnteredDate('');
 
         console.log(expenseData);
     }
@@ -27,14 +32,15 @@ const ExpenseForm = () => {
                 <div className='new-expense__control'>
                     <label>Title</label>
                     <input 
-                        type='text' 
+                        type='text'
+                        value={enteredTitle} 
                         onChange={titleChangeHandler}/>
                 </div>
                 <div className='new-expense__control'>
                     <label>Amount</label>
                     <input 
-                        type='number' 
-                        min="0.01" 
+                        type='number'
+                        value={enteredAmount}
                         onChange={amountChangeHandler}/>
                 </div>
                 <div className='new-expense__control'>
@@ -42,7 +48,8 @@ const ExpenseForm = () => {
                     <input 
                         type='date'
                         min="2019-01-01" 
-                        max="2022-12-31" 
+                        max="2022-12-31"
+                        value={enteredDate} 
                         onChange={dateChangeHandler}/>
                 </div>
             </div>
