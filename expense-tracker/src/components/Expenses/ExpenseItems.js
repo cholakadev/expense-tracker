@@ -17,11 +17,11 @@ function ExpenseItems(props) {
   })
 
     return (
-        <Card className="expenses">
-          <ExpensesFilter 
-            selected={selectedYearFilter} 
-            onFilter={getSelectedYear} />
-            <ExpensesList filteredExpenses={filteredExpenses}/>
+      <Card className="expenses">
+        <ExpensesFilter 
+          selected={selectedYearFilter} 
+          onFilter={getSelectedYear} />
+        <ExpensesList filteredExpenses={filteredExpenses}/>
       </Card>
     )
 }
