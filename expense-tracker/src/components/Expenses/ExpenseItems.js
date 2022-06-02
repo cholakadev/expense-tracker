@@ -25,6 +25,7 @@ function ExpenseItems(props) {
                           price={expense.amount} 
                           date={expense.date} />);
   }
+  
 
     return (
         <Card className="expenses">
