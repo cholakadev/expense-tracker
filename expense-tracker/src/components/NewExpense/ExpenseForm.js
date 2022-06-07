@@ -15,15 +15,15 @@ const ExpenseForm = (props) => {
 
         const expenseData = {
             title: enteredTitle,
-            amount: enteredAmount,
+            amount: +enteredAmount,
             date: new Date(enteredDate)
         }
+
+        props.onSubmitNewExpense(expenseData);
 
         setEnteredTitle('');
         setEnteredAmount('');
         setEnteredDate('');
-
-        props.onSubmitNewExpense(expenseData);
     }
 
     return (
